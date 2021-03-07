@@ -1,8 +1,22 @@
 import * as React from "react";
-
+import { graphql } from "gatsby";
 // markup
-const IndexPage = () => {
-  return <div>CIAONE</div>;
-};
+export default function IndexPage({ data }) {
+  return (
+    <div>
+      <ul>
+        <li>{data.contentfulMenuPrimi.nomePiatto}</li>
+      </ul>
+    </div>
+  );
+}
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    contentfulMenuPrimi {
+      id
+      nomePiatto
+      prezzo
+    }
+  }
+`;
