@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: "Restaurant Gatsby",
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "menu",
+        link: "/menu",
+      },
+    ],
   },
   plugins: [
     {
