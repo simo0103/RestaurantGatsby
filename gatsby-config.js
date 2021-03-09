@@ -10,6 +10,10 @@ module.exports = {
         name: "menu",
         link: "/menu",
       },
+      {
+        name: "eventi",
+        link: "/events",
+      },
     ],
   },
   plugins: [
@@ -21,5 +25,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-sass",
+    `gatsby-plugin-react-helmet`,
   ],
 };
