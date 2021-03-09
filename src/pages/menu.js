@@ -4,17 +4,18 @@ import Layout from "../components/layout";
 
 // markup
 export default function MenuPage({ data }) {
+  const menuList = data.allContentfulMenuPrimi.edges;
   return (
     <Layout>
       <div id="menu">
         <ul>
-          <li>
-            <p className="name">{data.contentfulMenuPrimi.nomePiatto}</p>
-            <span className="ingredienti">
-              {data.contentfulMenuPrimi.ingredienti}
-            </span>
-            <span>{data.contentfulMenuPrimi.prezzo}€</span>
-          </li>
+          {menuList.map((piatto) => (
+            <li key={piatto.node.nomePiatto}>
+              <p className="name">{piatto.node.nomePiatto}</p>
+              <span className="ingredienti">{piatto.node.ingredienti}</span>
+              <span>{piatto.node.prezzo}€</span>
+            </li>
+          ))}
         </ul>
       </div>
     </Layout>
@@ -23,11 +24,14 @@ export default function MenuPage({ data }) {
 
 export const query = graphql`
   query {
-    contentfulMenuPrimi {
-      id
-      nomePiatto
-      prezzo
-      ingredienti
+    allContentfulMenuPrimi {
+      edges {
+        node {
+          nomePiatto
+          prezzo
+          ingredienti
+        }
+      }
     }
   }
 `;
