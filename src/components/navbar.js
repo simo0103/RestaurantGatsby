@@ -13,26 +13,45 @@ const Navigation = styled.nav`
     height: 80px;
   }
 `;
+const Hamburger = styled.div`
+	@media (min-width: 768px) {
+		display: none;
+	}
+  	display: inline-block;
+		span {
+		display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		background: black;
+		border-radius: 3px;
+	
+	}
+	
+  }
+`;
 
-const Navbar = ({ siteTitle, menuLinks }) => (
+const LinkList = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+const Navbar = ({ menuLinks }) => (
   <Navigation>
-    <h1>
-      <Link
-        to="/"
-        style={{
-          textDecoration: "none",
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </h1>
-    <ul
-      style={{
-        display: "flex",
-        justifyItems: "space-between",
-        flex: 2,
-      }}
-    >
+    <Hamburger>
+      <span className="firstLine"></span>
+      <span className="secondLine"></span>
+      <span className="thirdLine"></span>
+    </Hamburger>
+    <LinkList>
       {menuLinks.map((link) => (
         <li
           key={link.name}
@@ -46,7 +65,7 @@ const Navbar = ({ siteTitle, menuLinks }) => (
           </Link>
         </li>
       ))}
-    </ul>
+    </LinkList>
   </Navigation>
 );
 

@@ -23,7 +23,7 @@ export default function MenuPage({ data }) {
 }
 
 export const query = graphql`
-  query {
+  query menuPrimi {
     allContentfulMenuPrimi {
       edges {
         node {

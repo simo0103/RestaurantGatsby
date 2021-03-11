@@ -1,7 +1,11 @@
 import * as React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import { Link } from "gatsby";
 import Navbar from "./navbar";
+import "@fontsource/open-sans";
+import "../style/style.scss";
+import styled from "styled-components";
 
 const Layout = ({ children }) => (
   // StaticQuery is a new component introduced in Gatsby V2,
@@ -25,10 +29,14 @@ const Layout = ({ children }) => (
       <React.Fragment>
         <Helmet title={data.site.siteMetadata.title}></Helmet>
         <header>
+          <h1>
+            <Link to="/">{data.site.siteMetadata.title}</Link>
+          </h1>
+
           <Navbar
             menuLinks={data.site.siteMetadata.menuLinks}
             siteTitle={data.site.siteMetadata.title}
-          />
+          ></Navbar>
         </header>
         <main>{children}</main>
       </React.Fragment>
