@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -44,30 +44,49 @@ const LinkList = styled.ul`
   }
 `;
 
-const Navbar = ({ menuLinks }) => (
-  <Navigation>
-    <Hamburger>
-      <span className="firstLine"></span>
-      <span className="secondLine"></span>
-      <span className="thirdLine"></span>
-    </Hamburger>
-    <LinkList>
-      {menuLinks.map((link) => (
-        <li
-          key={link.name}
-          style={{
-            listStyleType: `none`,
-            padding: "0 20px",
-          }}
+class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleClass = this.toggleClass.bind(this);
+
+    this.state = {
+      clicked: false,
+    };
+  }
+  toggleClass() {
+    const currentState = this.state.clicked;
+    this.setState({ clicked: !currentState });
+  }
+  render() {
+    return (
+      <Navigation>
+        <Hamburger
+          className={this.state.clicked ? "clicked" : null}
+          onClick={this.toggleClass}
         >
-          <Link style={{ color: `black` }} to={link.link}>
-            {link.name}
-          </Link>
-        </li>
-      ))}
-    </LinkList>
-  </Navigation>
-);
+          <span className="firstLine"></span>
+          <span className="secondLine"></span>
+          <span className="thirdLine"></span>
+        </Hamburger>
+        <LinkList>
+          {this.props.menuLinks.map((link) => (
+            <li
+              key={link.name}
+              style={{
+                listStyleType: `none`,
+                padding: "0 20px",
+              }}
+            >
+              <Link style={{ color: `black` }} to={link.link}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </LinkList>
+      </Navigation>
+    );
+  }
+}
 
 Navbar.propTypes = {
   siteTitle: PropTypes.string,
