@@ -31,6 +31,50 @@ const Hamburger = styled.div`
 	
   }
 `;
+const MobilePanelContainer = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50px;
+    height: 100vh;
+    z-index: 20;
+  }
+`;
+const MobilePanelLeft = styled.div`
+  @media (max-width: 768px) {
+    display: block;
+    flex: 1;
+    height: 0;
+    background-color: black;
+    transition: all 0.5s linear;
+    z-index: 20;
+    overflow: hidden;
+
+    &.visible {
+      height: 100vh;
+      opacity: 1;
+    }
+  }
+`;
+const MobilePanelRight = styled.div`
+  @media (max-width: 768px) {
+    display: block;
+    flex: 1;
+    height: 0;
+    margin-top: 100vh;
+    background-color: black;
+    transition: all 0.5s linear;
+    overflow: hidden;
+
+    &.visible {
+      height: 100vh;
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+`;
 
 const LinkList = styled.ul`
   @media (max-width: 768px) {
@@ -43,13 +87,8 @@ const LinkList = styled.ul`
     top: 50px;
     opacity: 0;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: all 0.5s ease-out, background 1s ease-out;
-    transition-delay: 0.2s;
 
     &.visible {
-      transition: all 0.3s ease-in, background 0.5s ease-in;
-      transition-delay: 0.25s;
       height: 100vh;
       opacity: 1;
       z-index: 100;
@@ -106,6 +145,10 @@ class Navbar extends Component {
             </ListElement>
           ))}
         </LinkList>
+        <MobilePanelContainer>
+          <MobilePanelLeft className={this.state.visible ? "visible" : null} />
+          <MobilePanelRight className={this.state.visible ? "visible" : null} />
+        </MobilePanelContainer>
       </Navigation>
     );
   }
