@@ -4,20 +4,25 @@ nav {
             @media (max-width: 768px) {
                 width: 100%;
                 text-align: center;
-                
             }
 
             a {
-
                 @media (max-width: 768px) {
+                    line-height: 2em;
+                    text-transform: uppercase;
                     display: block;
                     position: relative;
                     color: white;
-                    font-size: 22px;
+                    font-size: 40px;
                     width: 100%;
+                    font-weight: bold;
+                }
+
+                &[aria-current="page"] {
+                    color: black;
                 }
             }
         }
-        
+
     }
 }

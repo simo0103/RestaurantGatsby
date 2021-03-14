@@ -20,13 +20,45 @@ const Hamburger = styled.div`
   	display: inline-block;
 		span {
 		display: block;
-		width: 33px;
-		height: 4px;
+		width: 28px;
+		height: 3px;
 		margin-bottom: 5px;
 		position: relative;
-		background: black;
+		background: #ddc470;
 		border-radius: 3px;
-	
+		transition: background 0.2s linear;
+		&.firstLine {
+			transition: all 0.8s cubic-bezier(1, 1, 1, 1);
+
+		}
+		&.secondLine {
+			transition: width 0.3s cubic-bezier(1, 1, 1, 1);
+						  transition-delay: 0.5s;
+
+		}
+		&.thirdLine {
+			transition: all 0.8s cubic-bezier(1, 1, 1, 1);
+
+
+		}
+		
+	}
+	&.clicked {
+		span {
+			background: white;
+			&.firstLine {
+				transform: rotate(45deg);
+    			top: 9px;
+			}
+			&.secondLine {
+				width: 0;
+			}
+			&.thirdLine {
+				transform: rotate(-45deg);
+				top: -7px;
+
+			}
+		}
 	}
 	
   }
@@ -37,9 +69,9 @@ const MobilePanelContainer = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    top: 50px;
+    top: 0;
     height: 100vh;
-    z-index: 20;
+    z-index: -10;
   }
 `;
 const MobilePanelLeft = styled.div`
@@ -47,14 +79,13 @@ const MobilePanelLeft = styled.div`
     display: block;
     flex: 1;
     height: 0;
-    background-color: black;
-    transition: all 0.5s linear;
+    background-color: #ddc470;
+    transition: height 0.5s ease;
     z-index: 20;
     overflow: hidden;
-
     &.visible {
+      box-shadow: 0px 0px 0px 3px #ddc470;
       height: 100vh;
-      opacity: 1;
     }
   }
 `;
@@ -63,15 +94,14 @@ const MobilePanelRight = styled.div`
     display: block;
     flex: 1;
     height: 0;
-    margin-top: 100vh;
-    background-color: black;
-    transition: all 0.5s linear;
+    ${"" /* margin-top: 100vh; */}
+    background-color: #ddc470;
+    transition: height 0.7s linear;
     overflow: hidden;
 
     &.visible {
       height: 100vh;
-      opacity: 1;
-      margin-top: 0;
+      ${"" /* margin-top: 0; */}
     }
   }
 `;
