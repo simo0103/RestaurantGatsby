@@ -35,12 +35,12 @@ module.exports = {
         spaceId: "261507axkas5",
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: path.join(__dirname, `src`, `images`),
+    //   },
+    // },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-plugin-sass",
