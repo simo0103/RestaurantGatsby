@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
 import Navbar from "./navbar";
 import "@fontsource/open-sans";
 import "../style/style.scss";
@@ -41,10 +40,7 @@ const Layout = ({ children }) => (
       <React.Fragment>
         <Helmet title={data.site.siteMetadata.title}></Helmet>
         <Header>
-          <h1>
-            <Link to="/">{data.site.siteMetadata.title}</Link>
-          </h1>
-
+          <h1>{data.site.siteMetadata.title}</h1>
           <Navbar
             menuLinks={data.site.siteMetadata.menuLinks}
             siteTitle={data.site.siteMetadata.title}

@@ -1,12 +1,11 @@
 @import "./variables.scss";
+
 nav {
     @media (min-width: 769px) {
         width: 100%;
-        background-color: lightseagreen;
         display: flex;
         align-items: center;
         position: sticky;
-        height: 80px;
     }
 
     #hamburger {
@@ -31,7 +30,7 @@ nav {
             }
 
             &.secondLine {
-                transition: width 0.3s cubic-bezier(1, 1, 1, 1);
+                transition: width 0.5s cubic-bezier(1, 1, 1, 1);
                 transition-delay: 0.5s;
             }
 
@@ -87,21 +86,46 @@ nav {
             display: flex;
             width: 100%;
             flex-direction: row;
-            justify-content: space-between;
             align-items: center;
         }
 
         li {
+            text-align: center;
             @media (max-width: 768px) {
                 width: 100%;
-                text-align: center;
             }
 
             @media (min-width: 769px) {
-                padding: "0 20px";
+                flex: 1;
+                position: relative;
+                &.logo {
+                    flex: 2;
+                    background-image: url("../logo.svg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    height: 200px;
+                    a {
+                        display: none;
+                    }
+                }
+                &:last-of-type {
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+
+            svg {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $cian;
             }
 
             a {
+                font-family: 'Pacifico', cursive;
                 @media (max-width: 768px) {
                     line-height: 2em;
                     text-transform: uppercase;
@@ -112,9 +136,15 @@ nav {
                     width: 100%;
                     font-weight: bold;
                 }
+                @media (min-width: 769px) { 
+                    text-transform: capitalize;
+                    font-size: 24px;
+                    color: lightgrey;
+                }
 
-                &[aria-current="page"] {
-                    color: #031721;
+
+                &[aria-current="page"], &:hover {
+                    color: $cian;
                 }
             }
         }

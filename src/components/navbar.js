@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +37,9 @@ class Navbar extends Component {
         </div>
         <ul className={this.state.visible ? "visible" : null}>
           {this.props.menuLinks.map((link) => (
-            <li key={link.name}>
+            <li className={link.name} key={link.name}>
               <Link to={link.link}>{link.name}</Link>
+              <FontAwesomeIcon icon={faHeart} />
             </li>
           ))}
         </ul>

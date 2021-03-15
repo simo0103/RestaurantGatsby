@@ -1,6 +1,37 @@
 @import "./reset.scss";
 @import "./navbar.scss";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
   font-family: "Open Sans";
+}
+
+h1 {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: inline-block;
+  font-size: 0;
+}
+
+header {
+  background-color: #444;
+  text-align: center;
+  width:100%;
+  margin-bottom: 50px;
+
+
+  &::after {
+    content: "";
+    display: block;
+  position: relative;
+	width: 100%;
+	bottom: -30px;
+	height: 30px;
+	background: linear-gradient(-45deg, transparent 75%, #444 75%) 0 50%,
+		          linear-gradient( 45deg, transparent 75%, #444 75%) 0 50%;
+	background-repeat: repeat-x;
+  background-size: 30px 30px, 30px 30px;
+  }
 }

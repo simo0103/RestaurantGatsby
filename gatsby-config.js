@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
     title: "Restaurant Gatsby",
@@ -11,8 +13,16 @@ module.exports = {
         link: "/menu",
       },
       {
+        name: "logo",
+        link: "/",
+      },
+      {
         name: "eventi",
         link: "/events",
+      },
+      {
+        name: "contatti",
+        link: "/contacts",
       },
     ],
   },
@@ -25,8 +35,17 @@ module.exports = {
         spaceId: "261507axkas5",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-fontawesome-css",
   ],
 };
