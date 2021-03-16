@@ -6,6 +6,11 @@ body {
   font-family: "Open Sans";
 }
 
+main {
+  max-width: 97%;
+  margin: 0 auto;
+}
+
 h1 {
   opacity: 0;
   width: 0;
@@ -16,22 +21,23 @@ h1 {
 }
 
 header {
-  background-color: #444;
-  text-align: center;
-  width:100%;
-  margin-bottom: 50px;
+  @media (min-width: 769px) {
+    background-color: #444;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
 
-
-  &::after {
-    content: "";
-    display: block;
-  position: relative;
-	width: 100%;
-	bottom: -30px;
-	height: 30px;
-	background: linear-gradient(-45deg, transparent 75%, #444 75%) 0 50%,
-		          linear-gradient( 45deg, transparent 75%, #444 75%) 0 50%;
-	background-repeat: repeat-x;
-  background-size: 30px 30px, 30px 30px;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: 100%;
+      bottom: -30px;
+      height: 30px;
+      background: linear-gradient(-45deg, transparent 75%, #444 75%) 0 50%,
+        linear-gradient(45deg, transparent 75%, #444 75%) 0 50%;
+      background-repeat: repeat-x;
+      background-size: 30px 30px, 30px 30px;
+    }
   }
 }
