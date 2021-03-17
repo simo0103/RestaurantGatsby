@@ -5,15 +5,15 @@ class Home extends Component {
     return (
       <div
         className="imageContainer"
-        style={{ padding: "2%", border: "2px solid #69838d" }}
+        // style={{ padding: "2%", border: "2px solid #69838d" }}
       >
         <Image
-          src="muffins.png"
+          src="cupcakes2.jpg"
           className="mx-auto shadow-xl"
           alt="muffins Image"
           style={{
             width: "100%",
-            height: "500px",
+            height: "700px",
           }}
         />
       </div>
