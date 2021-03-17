@@ -87,17 +87,25 @@ nav {
             width: 100%;
             flex-direction: row;
             align-items: center;
+
         }
 
         li {
             text-align: center;
+
             @media (max-width: 768px) {
                 width: 100%;
+                &.logo {
+                    display: none;
+                }
+
             }
 
+            
             @media (min-width: 769px) {
                 flex: 1;
                 position: relative;
+                
                 &.logo {
                     flex: 2;
                     background-image: url("../logo.svg");
@@ -108,7 +116,9 @@ nav {
                     a {
                         display: none;
                     }
+
                 }
+
                 &:last-of-type {
                     svg {
                         display: none;
@@ -117,33 +127,40 @@ nav {
             }
 
             svg {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
                 color: $cian;
+                @media (min-width: 768px) {
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
             }
 
             a {
                 font-family: 'Pacifico', cursive;
+
                 @media (max-width: 768px) {
                     line-height: 2em;
                     text-transform: uppercase;
                     display: block;
                     position: relative;
-                    color: $cream;
+                    color: lightgrey;
                     font-size: 40px;
                     width: 100%;
                     font-weight: bold;
                 }
-                @media (min-width: 769px) { 
+
+                @media (min-width: 769px) {
                     text-transform: capitalize;
                     font-size: 24px;
                     color: lightgrey;
                 }
 
 
-                &[aria-current="page"], &:hover {
+                &[aria-current="page"],
+                &:hover {
                     color: $cian;
                 }
             }
@@ -169,13 +186,13 @@ nav {
                 display: block;
                 flex: 1;
                 height: 0;
-                background-color: #69838d;
+                background-color: #444;
                 transition: height 0.5s ease;
                 z-index: 20;
                 overflow: hidden;
 
                 &.visible {
-                    box-shadow: 0px 0px 0px 3px #69838d;
+                    box-shadow: 0px 0px 0px 3px #444;
                     height: 100vh;
                 }
             }
@@ -187,7 +204,7 @@ nav {
                 flex: 1;
                 height: 0;
                 //margin-top: 100vh;
-                background-color: #69838d;
+                background-color: #444;
                 transition: height 0.7s linear;
                 overflow: hidden;
 
