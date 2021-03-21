@@ -1,0 +1,26 @@
+.imageContainer {
+    .announcement {
+        position: absolute;
+        height: 100%;
+        left: 70%;
+        width: 20%;
+        z-index: 2;
+        background: #67867ecc;
+    }
+
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-repeat: repeat;
+        height: 10px;
+        background-size: 20px 20px;
+        background-image:
+            radial-gradient(circle at 10px -5px, #444 12px, transparent 13px);
+    }
+}
