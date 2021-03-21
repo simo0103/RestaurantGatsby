@@ -1,29 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import Image from "../components/image";
+import { graphql, StaticQuery, useStaticQuery } from "gatsby";
+
 import "../style/home.scss";
 
-class Home extends Component {
-  render() {
-    return (
-      <div
-        className="imageContainer"
-        // style={{ padding: "2%", border: "2px solid #69838d" }}
-      >
-        <div className="announcement">
-          <p>ciaone</p>
-        </div>
-        <Image
-          src="cupcakes2.jpg"
-          className="mx-auto shadow-xl"
-          alt="muffins Image"
-          style={{
-            width: "100%",
-            height: "700px",
-          }}
-        />
+export default function Home() {
+  const data = useStaticQuery(graphql`
+    query announcement {
+      allContentfulSliderHome {
+        edges {
+          node {
+            announcement
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <div className="imageContainer">
+      <div className="announcement">
+        {data.allContentfulSliderHome.edges.map((ann) => (
+          <p>{ann.node.announcement}</p>
+        ))}
       </div>
-    );
-  }
+      <Image
+        src="cupcakes2.jpg"
+        className="mx-auto shadow-xl"
+        alt="muffins Image"
+        style={{
+          width: "100%",
+          height: "700px",
+        }}
+      />
+    </div>
+  );
 }
-
-export default Home;
