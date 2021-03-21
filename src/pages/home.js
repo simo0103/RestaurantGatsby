@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "../components/image";
-import { graphql, StaticQuery, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 import "../style/home.scss";
 
@@ -22,6 +22,7 @@ export default function Home() {
         {data.allContentfulSliderHome.edges.map((ann) => (
           <p>{ann.node.announcement}</p>
         ))}
+        <button>explore</button>
       </div>
       <Image
         src="cupcakes2.jpg"

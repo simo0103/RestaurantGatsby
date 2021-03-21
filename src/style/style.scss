@@ -1,14 +1,9 @@
 @import "./reset.scss";
 @import "./navbar.scss";
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import "./mixins.scss";
 
 body {
   font-family: "Open Sans";
-}
-
-main {
-  // max-width: 97%;
-  // margin: 0 auto;
 }
 
 h1 {
@@ -22,39 +17,21 @@ h1 {
 
 header {
   @media (min-width: 769px) {
-    background-color: #444;
+    background-color: $dark-grey;
     text-align: center;
     position: relative;
     width: 100%;
-    // margin-bottom: 50px;
 
-    // &::after {
-    //   content: "";
-    //   display: block;
-    //   position: relative;
-    //   width: 100%;
-    //   bottom: -30px;
-    //   height: 30px;
-    //   background: linear-gradient(-45deg, transparent 75%, #444 75%) 0 50%,
-    //     linear-gradient(45deg, transparent 75%, #444 75%) 0 50%;
-    //   background-repeat: repeat-x;
-    //   background-size: 30px 30px, 30px 30px;
-    //   z-index: 100;
-    // }
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-    //   right: 0;
-    //   background-repeat: repeat;
-    //   height: 10px;
-    //   background-size: 20px 20px;
-    //   background-image:
-    //     radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
-    //   z-index: 2000;
-    // }
-
+    &::before {
+      content: "";
+      height: 14px;
+      position: absolute;
+      bottom: -14px;
+      left: 0;
+      background: $dark-grey;
+      width: 100%;
+      z-index: 5;
+    }
 
   }
 }
