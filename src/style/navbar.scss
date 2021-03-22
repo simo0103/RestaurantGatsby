@@ -94,17 +94,18 @@ nav {
 
             @media (max-width: 768px) {
                 width: 100%;
+
                 &.logo {
                     display: none;
                 }
 
             }
 
-            
+
             @media (min-width: 769px) {
                 flex: 1;
                 position: relative;
-                
+
                 &.logo {
                     flex: 2;
                     background-image: url("../SVG/logo3.svg");
@@ -112,6 +113,7 @@ nav {
                     background-size: contain;
                     background-position: center;
                     height: 120px;
+
                     a {
                         display: none;
                     }
@@ -127,6 +129,7 @@ nav {
 
             svg {
                 color: $cian;
+
                 @media (min-width: 768px) {
                     @include absolute-vertical-center;
                     display: inline-block;
@@ -141,18 +144,25 @@ nav {
                 @media (max-width: 768px) {
                     line-height: 2em;
                     text-transform: uppercase;
+
                     display: block;
                     position: relative;
                     color: lightgrey;
                     font-size: 40px;
                     width: 100%;
                     font-weight: bold;
+
                 }
 
                 @media (min-width: 769px) {
                     text-transform: capitalize;
                     font-size: 24px;
                     color: lightgrey;
+                    padding: 10px;
+
+                    &:focus {
+                        outline-color: $cian;
+                    }
                 }
 
 

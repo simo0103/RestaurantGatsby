@@ -21,6 +21,7 @@
             padding: 0 20%;
             text-align: center;
         }
+
         button {
             @include button;
         }
@@ -39,5 +40,26 @@
         background-size: 20px 20px;
         background-image:
             radial-gradient(circle at 10px -5px, $dark-grey 12px, transparent 13px);
+    }
+}
+
+.bestSellers {
+    margin: 60px 0;
+    h3 {
+        padding-bottom: 60px;
+        text-align: center;
+        font-size: 40px;
+        font-family: $pacifico;
+        color: #f94b68;
+        text-transform: capitalize;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        >div {
+            flex: 1;
+        }
     }
 }
