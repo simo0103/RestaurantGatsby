@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import SubHeader from "./subheader";
 import Navbar from "./navbar";
 import "@fontsource/open-sans";
 import "../style/style.scss";
@@ -33,9 +34,8 @@ const Layout = ({ children }) => (
             siteTitle={data.site.siteMetadata.title}
           ></Navbar>
         </header>
-        <div id={children.type.name.toLowerCase()} className="siteContainer">
-          <main>{children}</main>
-        </div>
+        {children.type.name === "Home" && <SubHeader />}
+        <main>{children}</main>
       </React.Fragment>
     )}
   />
