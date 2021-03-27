@@ -28,19 +28,6 @@
     }
 
 
-    &::after {
-        content: "";
-        position: absolute;
-        z-index: 4;
-        left: 0;
-        top: 14px;
-        right: 0;
-        background-repeat: repeat;
-        height: 10px;
-        background-size: 20px 20px;
-        background-image:
-            radial-gradient(circle at 10px -5px, $dark-grey 12px, transparent 13px);
-    }
 }
 
 .bestSellers {

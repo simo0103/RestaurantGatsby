@@ -21,7 +21,7 @@ export default function Home() {
       <div className="imageContainer">
         <div className="announcement">
           {data.allContentfulSliderHome.edges.map((ann) => (
-            <p>{ann.node.announcement}</p>
+            <p key={ann.node.announcement}>{ann.node.announcement}</p>
           ))}
           <button>explore</button>
         </div>
@@ -37,7 +37,7 @@ export default function Home() {
       </div>
       <div className="bestSellers">
         <h3>best sellers of this week</h3>
-        <div class="container">
+        <div className="container">
           <div>
             <Image
               src="cake_1920.jpg"
