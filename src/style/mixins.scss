@@ -5,6 +5,13 @@
     justify-content: center;
 }
 
+@mixin flex($direction, $align : normal, $justify: normal) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
 @mixin absolute-center {
     position: absolute;
     top: 50%;
@@ -24,6 +31,7 @@
     color: white;
     text-transform: uppercase;
     margin-top: 10px;
+
     &:hover {
         background-color: white;
         color: $cian;
