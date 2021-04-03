@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
-function Navbar(props) {
-  const [clicked, setClicked] = useState(false);
-  const [visible, setVisible] = useState(false);
+const Navbar = (props) => {
+  const [isClicked, setClicked] = useState(false);
+  const [isVisible, setVisible] = useState(false);
 
   const toggleClass = () => {
-    setClicked(!clicked);
-    setVisible(!visible);
+    setClicked(!isClicked);
+    setVisible(!isVisible);
 
     console.log("menu closed");
   };
@@ -17,14 +17,17 @@ function Navbar(props) {
     <nav>
       <div
         id="hamburger"
-        className={clicked ? "clicked" : null}
-        onClick={toggleClass}
+        className={isClicked ? "clicked" : null}
+        onClick={() => {
+          toggleClass();
+          props.toggleClassMobileMenu();
+        }}
       >
         <span className="firstLine"></span>
         <span className="secondLine"></span>
         <span className="thirdLine"></span>
       </div>
-      <ul className={visible ? "visible" : null}>
+      <ul className={isVisible ? "visible" : null}>
         {props.menuLinks.map((link) => (
           <li className={link.name} key={link.name}>
             <Link to={link.link}>{link.name}</Link>
@@ -32,12 +35,12 @@ function Navbar(props) {
         ))}
       </ul>
       <div className="mobilePanelContainer">
-        <div id="panelLeft" className={visible ? "visible" : null} />
-        <div id="panelRight" className={visible ? "visible" : null} />
+        <div id="panelLeft" className={isVisible ? "visible" : null} />
+        <div id="panelRight" className={isVisible ? "visible" : null} />
       </div>
     </nav>
   );
-}
+};
 
 Navbar.propTypes = {
   siteTitle: PropTypes.string,
