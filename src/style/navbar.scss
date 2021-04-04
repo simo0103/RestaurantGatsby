@@ -2,8 +2,16 @@
 @import "./mixins.scss";
 
 nav {
+    @include desktop-only {
+        width: 100%;
+    }
     #hamburger {
+        @include desktop-only {
+            display: none;
+        }
+
         display: inline-block;
+
         span {
             display: block;
             width: 28px;
@@ -52,7 +60,8 @@ nav {
 
 
     ul {
-        @media (max-width: 768px) {
+        display: flex;
+        @include mobile-only {
             @include flex(column, center);
             position: absolute;
             height: auto;
@@ -66,34 +75,46 @@ nav {
                 opacity: 1;
                 z-index: 100;
             }
-        }
 
-        li {
-            text-align: center;
-            &.logo {
-                display: none;
-            }
-            a {
-                @media (max-width: 768px) {
-                    line-height: 1.5em;
-                    text-transform: uppercase;
-                    letter-spacing: 3px;
-                    display: block;
-                    position: relative;
-                    color: white;
-                    font-size: 35px;
-                    width: 100%;
-                    font-weight: bold;
+            li {
+                text-align: center;
 
+                &.logo {
+                    display: none;
                 }
 
-            
-                &[aria-current="page"],
-                &:hover {
-                    color: black;
+                a {
+                    @include desktop-only {
+
+                        color: green;
+                    }
+                    @include mobile-only {
+                        line-height: 1.5em;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        display: block;
+                        position: relative;
+                        color: white;
+                        font-size: 35px;
+                        width: 100%;
+                        font-weight: bold;
+
+                    }
+
+
+                    &[aria-current="page"],
+                    &:hover {
+                        color: black;
+                    }
+                    
                 }
             }
         }
 
-    } 
+        @include desktop-only {
+            justify-content: space-between;
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
 }

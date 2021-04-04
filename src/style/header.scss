@@ -1,0 +1,22 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+
+header {
+	@include mobile-only {
+		@include flex(row, center, flex-end);
+		height: $header-mobile-height;
+		padding: 0 20px;
+		position: fixed;
+		z-index: 20;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: transparent;
+	}
+
+    @include desktop-only {
+        	@include flex(row, center, space-between);
+    }
+
+}

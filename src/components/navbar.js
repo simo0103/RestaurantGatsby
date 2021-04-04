@@ -18,7 +18,13 @@ const Navbar = (props) => {
       <nav>
         <div
           id="hamburger"
+          role="button"
+          tabIndex={0}
           className={isClicked ? "clicked" : null}
+          onKeyDown={() => {
+            toggleClass();
+            props.toggleClassMobileMenu();
+          }}
           onClick={() => {
             toggleClass();
             props.toggleClassMobileMenu();
