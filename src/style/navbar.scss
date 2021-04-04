@@ -10,7 +10,7 @@ nav {
             height: 3px;
             margin-bottom: 5px;
             position: relative;
-            background: $dark-blue;
+            background: $golden;
             border-radius: 3px;
             transition: background 0.2s linear;
 
@@ -30,7 +30,7 @@ nav {
 
         &.clicked {
             span {
-                background: $cream;
+                background: black;
 
                 &.firstLine {
                     transform: rotate(45deg);
@@ -58,7 +58,7 @@ nav {
             height: auto;
             width: 100%;
             right: 0;
-            top: $header-mobile-height;
+            top: calc(#{$header-mobile-height} + 40px);
             opacity: 0;
 
             &.visible {
@@ -70,15 +70,18 @@ nav {
 
         li {
             text-align: center;
+            &.logo {
+                display: none;
+            }
             a {
                 @media (max-width: 768px) {
-                    line-height: 2em;
+                    line-height: 1.5em;
                     text-transform: uppercase;
-
+                    letter-spacing: 3px;
                     display: block;
                     position: relative;
-                    color: lightgrey;
-                    font-size: 40px;
+                    color: white;
+                    font-size: 35px;
                     width: 100%;
                     font-weight: bold;
 
@@ -87,58 +90,10 @@ nav {
             
                 &[aria-current="page"],
                 &:hover {
-                    color: $cian;
+                    color: black;
                 }
             }
         }
 
-    }
-
-    //mobile panel 
-    .mobilePanelContainer {
-
-        @media (max-width: 768px) {
-            display: flex;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            top: calc(#{$header-mobile-height} - 3px);
-            height: 100vh;
-            z-index: 1;
-        }
-
-        #panelLeft {
-            @media (max-width: 768px) {
-                display: block;
-                flex: 1;
-                height: 0;
-                background-color: $golden;
-                transition: height 0.5s ease;
-                z-index: 20;
-                overflow: hidden;
-
-                &.visible {
-                    box-shadow: 0px 0px 0px 3px $golden;
-                    height: 100vh;
-                }
-            }
-        }
-
-        #panelRight {
-            @media (max-width: 768px) {
-                display: block;
-                flex: 1;
-                height: 0;
-                //margin-top: 100vh;
-                background-color: $golden;
-                transition: height 0.7s linear;
-                overflow: hidden;
-
-                &.visible {
-                    height: 100vh;
-                    // margin-top: 0
-                }
-            }
-        }
-    }
+    } 
 }

@@ -39,6 +39,16 @@ const Layout = ({ children }) => {
           siteTitle={data.site.siteMetadata.title}
         ></Navbar>
       </header>
+      <div className="mobilePanelContainer">
+        <div
+          id="panelLeft"
+          className={isMenuMobileClicked ? "visible" : null}
+        />
+        <div
+          id="panelRight"
+          className={isMenuMobileClicked ? "visible" : null}
+        />
+      </div>
       <main>{children}</main>
     </React.Fragment>
   );

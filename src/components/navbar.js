@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
@@ -14,31 +14,29 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav>
-      <div
-        id="hamburger"
-        className={isClicked ? "clicked" : null}
-        onClick={() => {
-          toggleClass();
-          props.toggleClassMobileMenu();
-        }}
-      >
-        <span className="firstLine"></span>
-        <span className="secondLine"></span>
-        <span className="thirdLine"></span>
-      </div>
-      <ul className={isVisible ? "visible" : null}>
-        {props.menuLinks.map((link) => (
-          <li className={link.name} key={link.name}>
-            <Link to={link.link}>{link.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <div className="mobilePanelContainer">
-        <div id="panelLeft" className={isVisible ? "visible" : null} />
-        <div id="panelRight" className={isVisible ? "visible" : null} />
-      </div>
-    </nav>
+    <Fragment>
+      <nav>
+        <div
+          id="hamburger"
+          className={isClicked ? "clicked" : null}
+          onClick={() => {
+            toggleClass();
+            props.toggleClassMobileMenu();
+          }}
+        >
+          <span className="firstLine"></span>
+          <span className="secondLine"></span>
+          <span className="thirdLine"></span>
+        </div>
+        <ul className={isVisible ? "visible" : null}>
+          {props.menuLinks.map((link) => (
+            <li className={link.name} key={link.name}>
+              <Link to={link.link}>{link.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </Fragment>
   );
 };
 
