@@ -15,8 +15,12 @@ header {
 		background-color: transparent;
 	}
 
-    @include desktop-only {
-        	@include flex(row, center, space-between);
-    }
+	@include desktop-only {
+		@include flex(row, center, space-between);
+		height: $header-desktop-height;
+		position: fixed;
+		z-index: 30;
+		width: 100%;
+	}
 
 }

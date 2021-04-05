@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-// import Image from "../components/image";
+import Image from "../components/image";
 // import { graphql, useStaticQuery } from "gatsby";
 
 import "../style/home.scss";
@@ -25,15 +25,20 @@ export default function Home() {
           ))}
           <button>explore</button>
         </div> */}
-        {/* <Image
-          src="cupcakes2.jpg"
+        <Image
+          src="burger.jpg"
           className="mx-auto shadow-xl"
           alt="muffins Image"
           style={{
+            position: "absolute",
+            overflow: "hidden",
             width: "100%",
-            height: "700px",
+            height: "100%",
+            objectFit: "cover",
+            top: 0,
+            left: 0,
           }}
-        /> */}
+        />
       </div>
     </Fragment>
   );
