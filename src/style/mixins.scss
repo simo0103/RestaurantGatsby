@@ -40,9 +40,20 @@
 }
 
 @mixin mobile-only {
-  @media (max-width: 768px) { @content; }
-}
-@mixin desktop-only {
-  @media (min-width: 768px) { @content; }
+    @media (max-width: 768px) {
+        @content;
+    }
 }
 
+@mixin desktop-only {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin bartender {
+    font-family: $bartenderFont;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}

@@ -4,14 +4,9 @@
 @import "./header.scss";
 @import "./navbar.scss";
 
-
-@font-face {
-	font-family: "Bartender";
-	src: url("../fonts/Bartender.ttf");
-}
-
 body {
-	font-family: "Bartender", sans-serif;
+	font-family: $bartenderFont;
+	background-color: black;
 }
 
 h1 {

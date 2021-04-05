@@ -5,12 +5,14 @@ nav {
     @include desktop-only {
         width: 100%;
     }
+
     #hamburger {
         @include desktop-only {
             display: none;
         }
 
         display: inline-block;
+        outline: none;
 
         span {
             display: block;
@@ -61,6 +63,7 @@ nav {
 
     ul {
         display: flex;
+
         @include mobile-only {
             @include flex(column, center);
             position: absolute;
@@ -84,21 +87,15 @@ nav {
                 }
 
                 a {
-                    @include desktop-only {
 
-                        color: green;
-                    }
                     @include mobile-only {
+                        @include bartender;
                         line-height: 1.5em;
-                        text-transform: uppercase;
-                        letter-spacing: 3px;
                         display: block;
                         position: relative;
                         color: white;
                         font-size: 35px;
                         width: 100%;
-                        font-weight: bold;
-
                     }
 
 
@@ -106,7 +103,7 @@ nav {
                     &:hover {
                         color: black;
                     }
-                    
+
                 }
             }
         }
@@ -115,6 +112,23 @@ nav {
             justify-content: space-between;
             width: 60%;
             margin: 0 auto;
+
+            .logo {
+                display: none;
+            }
+
+            a {
+                @include bartender;
+                color: white;
+                padding: 10px;
+                display: block;
+                font-size: 1.375vw;
+
+                &[aria-current="page"],
+                &:hover {
+                    color: $golden;
+                }
+            }
         }
     }
 }

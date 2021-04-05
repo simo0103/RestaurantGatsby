@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@font-face {
+	font-family: "Bartender";
+	src: url("../fonts/Bartender.ttf");
+}
 
-//colors
-$brown : #695858;
-$cian : #8eb8ad;
-$dark-blue: #69838d;
-$cream : #ffe9c8;
-$salmon: #dba79e;
-$dark-grey: #444;
+
 $golden: #856b39;
 
-$pacifico : 'Pacifico', cursive;
+$bartenderFont : "Bartender", sans-serif;
 
 $header-mobile-height: 60px;
