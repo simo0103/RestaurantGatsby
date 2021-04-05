@@ -30,7 +30,7 @@ export default function Home() {
         <Image
           src="burger.jpg"
           className="mx-auto shadow-xl"
-          alt="muffins Image"
+          alt="burger Image"
           style={{
             position: "absolute",
             overflow: "hidden",
@@ -53,7 +53,7 @@ export default function Home() {
         <Image
           src="sandwich.jpg"
           className="mx-auto shadow-xl"
-          alt="muffins Image"
+          alt="sandwich Image"
           style={{
             position: "absolute",
             overflow: "hidden",
