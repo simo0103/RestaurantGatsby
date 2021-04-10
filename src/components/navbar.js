@@ -40,6 +40,11 @@ const Navbar = (props) => {
               <Link to={link.link}>{link.name}</Link>
             </li>
           ))}
+          <li className="reservations">
+            <button>
+              <span>reservation</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </Fragment>

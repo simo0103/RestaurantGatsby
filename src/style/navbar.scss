@@ -132,4 +132,22 @@ nav {
             }
         }
     }
+
+    .reservations {
+        @include vertical-center-flex;
+
+        button {
+            padding: 10px 20px;
+            border: 1px solid $golden;
+            color: $golden;
+            text-transform: uppercase;
+            letter-spacing: 0.10em;
+            transition: border-color .4s,color .4s,background-color .4s;
+            &:hover {
+                color: black;
+                background-color: $golden;
+                
+            }
+        }
+    }
 }
