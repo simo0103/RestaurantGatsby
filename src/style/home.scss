@@ -1,6 +1,10 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
+.imgWrapper {
+    position: relative;
+}
+
 .imageContainer {
     overflow: hidden;
     position: relative;
@@ -38,7 +42,7 @@
         top: 0;
         left: 0;
         background-color: black;
-        opacity: 0.4;
+        opacity: 0.2;
         z-index: 1;
     }
 
@@ -46,8 +50,13 @@
         float: right;
         padding-top: 50%;
         margin-top: 60px;
+
         @include desktop-only {
             padding-top: 25%;
+            position: absolute;
+            bottom: -20%;
+            right: 12%;
+            z-index: 2;
         }
     }
 }

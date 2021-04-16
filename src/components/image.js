@@ -15,8 +15,8 @@ const Image = ({ src, ...rest }) => {
             extension
             publicURL
             childImageSharp {
-              fluid(maxWidth: 1920) {
-                ...GatsbyImageSharpFluid
+              fixed(width: 1920) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -38,7 +38,7 @@ const Image = ({ src, ...rest }) => {
     return <img alt="" src={publicURL} {...rest} />;
   }
 
-  return <Img alt="" fluid={childImageSharp.fluid} {...rest} />;
+  return <Img alt="" fixed={childImageSharp.fixed} {...rest} />;
 };
 
 Image.propTypes = {
