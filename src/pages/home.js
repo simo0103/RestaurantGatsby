@@ -18,6 +18,13 @@ export default function Home() {
   //   `);
   return (
     <Fragment>
+      <div className="textWrapper">
+        <div className="heroText">
+          <p>good times</p>
+          <p className="separate">with</p>
+          <p>good friends</p>
+        </div>
+      </div>
       <div className="imgWrapper">
         <div className="imageContainer">
           <span className="overlay"></span>

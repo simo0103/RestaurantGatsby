@@ -54,9 +54,34 @@
         @include desktop-only {
             padding-top: 25%;
             position: absolute;
-            bottom: -20%;
+            bottom: -40%;
             right: 12%;
             z-index: 2;
         }
+    }
+
+}
+.heroText {
+    @include desktop-only {
+        z-index: 3;
+        text-align: center;
+        height: auto;
+        position: absolute;
+        width: auto;
+        left: 43vw;
+        top: 20%;
+        p {
+            font-size: 130px;
+            color: #ad9a74;
+            text-shadow: 0 0.0625vw 0.25vw rgb(0 0 0 / 76%);
+            @include bartender;
+            &:not(:last-of-type) {
+                display: inline-block
+            }
+            &.separate {
+                font-size: 50px;
+            }
+        }
+
     }
 }
