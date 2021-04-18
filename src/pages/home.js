@@ -20,21 +20,17 @@ export default function Home() {
     <Fragment>
       <div className="textWrapper">
         <div className="heroText">
-          <p>good times</p>
-          <p className="separate">with</p>
-          <p>good friends</p>
+          <div>
+            <p>good times</p>
+            <p className="separate">with</p>
+            <p>good friends</p>
+            <span className="fadingEffect"></span>
+          </div>
         </div>
       </div>
       <div className="imgWrapper">
         <div className="imageContainer">
           <span className="overlay"></span>
-
-          {/* <div className="announcement">
-          {data.allContentfulSliderHome.edges.map((ann) => (
-            <p key={ann.node.announcement}>{ann.node.announcement}</p>
-          ))}
-          <button>explore</button>
-        </div> */}
           <Image
             src="burger.jpg"
             className="mx-auto shadow-xl"

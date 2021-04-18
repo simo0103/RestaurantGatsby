@@ -36,14 +36,20 @@
     }
 
     .overlay {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: black;
-        opacity: 0.2;
-        z-index: 1;
+        @include desktop-only {
+
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: black;
+            z-index: 1;
+            width: 0%;
+            background: black;
+            -webkit-animation: showHide 2s ease-in;
+            -ms-animation: showHide 2s ease-in;
+            animation: showHide 2s ease-in;
+        }
     }
 
     &:last-of-type {
@@ -61,7 +67,9 @@
     }
 
 }
+
 .heroText {
+
     @include desktop-only {
         z-index: 3;
         text-align: center;
@@ -70,18 +78,60 @@
         width: auto;
         left: 43vw;
         top: 20%;
+
+        >div {
+            position: relative;
+        }
+
+        .fadingEffect {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            background: black;
+            /* Firefox */
+            -webkit-animation: showHide 4s ease-in;
+            /* Safari and Chrome */
+            -ms-animation: showHide 4s ease-in;
+            /* Opera */
+            animation: showHide 4s ease-in;
+        }
+
+
         p {
+            // animation: fade 5s;
             font-size: 130px;
             color: #ad9a74;
             text-shadow: 0 0.0625vw 0.25vw rgb(0 0 0 / 76%);
             @include bartender;
+
             &:not(:last-of-type) {
                 display: inline-block
             }
+
             &.separate {
                 font-size: 50px;
             }
         }
 
+    }
+}
+
+@keyframes showHide {
+    0% {
+        width: 100%
+    }
+
+    40% {
+        width: 0%
+    }
+
+    60% {
+        width: 0%;
+    }
+
+    100% {
+        width: 0%;
     }
 }
