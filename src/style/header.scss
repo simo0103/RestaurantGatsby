@@ -20,21 +20,39 @@ header {
 		position: fixed;
 		z-index: 30;
 		width: 100%;
-		animation: heightNav 2s linear;
-		height: $header-desktop-height;
+		animation: heightNav linear;
+		animation-duration: 7s;
+		// animation-delay: 5s;
 
 	}
 
 }
 
 @keyframes heightNav {
-	from {
-		height: 0;
+	0% {
+		transform: translateY(-60px);
 		opacity: 0;
 	}
 
-	to {
-		height: $header-desktop-height;
+	
+
+	70% {
+		transform: translateY(-60px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
 		opacity: 1;
+	}
+}
+
+@-webkit-keyframes heightNav {
+	from {
+		transform: translateY(-60px);
+	}
+
+	to {
+		transform: translateY(0px);
 	}
 }

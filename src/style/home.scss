@@ -28,6 +28,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center center;
+        
 
         &::before {
             content: "";
@@ -46,9 +47,9 @@
             z-index: 1;
             width: 0%;
             background: black;
-            -webkit-animation: showHide 2s ease-in;
-            -ms-animation: showHide 2s ease-in;
-            animation: showHide 2s ease-in;
+            -webkit-animation: showImg 2s ease-in;
+            -ms-animation: showImg 2s ease-in;
+            animation: showImg 2s ease-in;
         }
     }
 
@@ -91,11 +92,11 @@
             width: 0%;
             background: black;
             /* Firefox */
-            -webkit-animation: showHide 4s ease-in;
+            -webkit-animation: showText 4s ease-in;
             /* Safari and Chrome */
-            -ms-animation: showHide 4s ease-in;
+            -ms-animation: showText 4s ease-in;
             /* Opera */
-            animation: showHide 4s ease-in;
+            animation: showText 4s ease-in;
         }
 
 
@@ -118,17 +119,20 @@
     }
 }
 
-@keyframes showHide {
+@keyframes showImg {
     0% {
-        width: 100%
+        width: 100%;
     }
 
-    40% {
-        width: 0%
-    }
-
-    60% {
+    100% {
         width: 0%;
+
+    }
+}
+
+@keyframes showText {
+    0% {
+        width: 100%;
     }
 
     100% {
