@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import Navbar from "./navbar";
@@ -8,14 +8,20 @@ import "../style/style.scss";
 const Layout = ({ children }) => {
   const [isMenuMobileClicked, setClicked] = useState(false);
   const [classesNames, setClassesNames] = useState("");
+  const isBrowser = typeof window !== "undefined";
+
   const handleToggleClass = () => {
     setClicked(!isMenuMobileClicked);
   };
 
-   useEffect(() => {
-    document.addEventListener('scroll', () => {
-    window.scrollY > 1 ? setClassesNames("stickyHeader") : setClassesNames("");
-    });
+  useEffect(() => {
+    if (isBrowser) {
+      document.addEventListener("scroll", () => {
+        window.scrollY > 1
+          ? setClassesNames("stickyHeader")
+          : setClassesNames("");
+      });
+    }
   });
 
   const data = useStaticQuery(graphql`
