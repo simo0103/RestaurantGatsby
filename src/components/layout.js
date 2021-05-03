@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import Navbar from "./navbar";
@@ -12,8 +12,12 @@ const Layout = ({ children }) => {
     setClicked(!isMenuMobileClicked);
   };
 
-  const handleScroll = () =>
-    window.scrollY > 90 ? setClassesNames("stickyHeader") : setClassesNames("");
+   useEffect(() => {
+    // Update the document title using the browser API
+    document.addEventListener('scroll', () => {
+    window.scrollY > 1 ? setClassesNames("stickyHeader") : setClassesNames("");
+    });
+  });
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -39,7 +43,6 @@ const Layout = ({ children }) => {
       </Helmet>
       <header
         className={`${isMenuMobileClicked ? "clicked" : ""} ${classesNames}`}
-        onScroll={() => handleScroll()}
       >
         <h1>{data.site.siteMetadata.title}</h1>
         <Navbar

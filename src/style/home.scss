@@ -78,7 +78,7 @@
         position: absolute;
         width: auto;
         left: 43vw;
-        top: 20%;
+        top: 25%;
 
         >div {
             position: relative;
@@ -92,11 +92,11 @@
             width: 0%;
             background: black;
             /* Firefox */
-            -webkit-animation: showText 4s ease-in;
+            -webkit-animation: showText 2s ease-in;
             /* Safari and Chrome */
-            -ms-animation: showText 4s ease-in;
+            -ms-animation: showText 2s ease-in;
             /* Opera */
-            animation: showText 4s ease-in;
+            animation: showText 2s ease-in;
         }
 
 
