@@ -123,7 +123,7 @@ nav {
                 color: white;
                 padding: 30px 10px;
                 display: block;
-                font-size: 1.375vw;
+                font-size: 35px;
                 transition: color 0.4s;
 
                 &[aria-current="page"],
@@ -132,23 +132,41 @@ nav {
                 }
             }
         }
+
+        @include desktop-xxl {
+            a {
+                font-size: 50px;
+            }
+        }
     }
 
     .reservations {
         @include vertical-center-flex;
 
         button {
-            padding: 10px 20px;
+            padding: 10px 20px 8px;
             border: 1px solid $golden;
             color: $golden;
             text-transform: uppercase;
             letter-spacing: 0.10em;
             transition: border-color .4s, color .4s, background-color .4s;
 
+            span {
+                font-size: 30px;
+
+                @include desktop-xxl {
+                    font-size: 50px;
+                }
+            }
+
             &:hover {
                 color: black;
                 background-color: $golden;
 
+            }
+
+            @include desktop-xxl {
+                padding: 14px 30px 12px;
             }
         }
     }

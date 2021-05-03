@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
   };
 
    useEffect(() => {
-    // Update the document title using the browser API
     document.addEventListener('scroll', () => {
     window.scrollY > 1 ? setClassesNames("stickyHeader") : setClassesNames("");
     });

@@ -50,6 +50,23 @@
         @content;
     }
 }
+@mixin desktop-only {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+     @media (min-width: $bp-xlarge) {
+        @content;
+    }
+}
+
+@mixin desktop-xxl {
+     @media (min-width: $bp-xxlarge) {
+        @content;
+    }
+}
 
 @mixin bartender {
     font-family: $bartenderFont;

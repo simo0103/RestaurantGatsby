@@ -101,7 +101,6 @@
 
 
         p {
-            // animation: fade 5s;
             font-size: 130px;
             color: #ad9a74;
             text-shadow: 0 0.0625vw 0.25vw rgb(0 0 0 / 76%);
@@ -116,6 +115,14 @@
             }
         }
 
+    }
+    @include desktop-xxl {
+        p {
+            font-size: 200px;
+            &.separate {
+                font-size: 100px;
+            }
+        }
     }
 }
 
