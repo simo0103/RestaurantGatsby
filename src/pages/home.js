@@ -1,23 +1,15 @@
 import React, { Fragment } from "react";
 import Image from "../components/image";
-// import { graphql, useStaticQuery } from "gatsby";
+import { Helmet } from "react-helmet";
 
 import "../style/home.scss";
 
 export default function Home() {
-  //   const data = useStaticQuery(graphql`
-  //     query announcement {
-  //       allContentfulSliderHome {
-  //         edges {
-  //           node {
-  //             announcement
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `);
   return (
     <Fragment>
+      <Helmet>
+        <body className="home" />
+      </Helmet>
       <div className="textWrapper">
         <div className="heroText">
           <div>
@@ -48,12 +40,7 @@ export default function Home() {
         </div>
         <div className="imageContainer">
           <span className="overlay"></span>
-          {/* <div className="announcement">
-          {data.allContentfulSliderHome.edges.map((ann) => (
-            <p key={ann.node.announcement}>{ann.node.announcement}</p>
-          ))}
-          <button>explore</button>
-        </div> */}
+
           <Image
             src="sandwich.jpg"
             className="mx-auto shadow-xl"

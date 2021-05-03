@@ -7,9 +7,13 @@ import "../style/style.scss";
 
 const Layout = ({ children }) => {
   const [isMenuMobileClicked, setClicked] = useState(false);
+  const [classesNames, setClassesNames] = useState("");
   const handleToggleClass = () => {
     setClicked(!isMenuMobileClicked);
   };
+
+  const handleScroll = () =>
+    window.scrollY > 90 ? setClassesNames("stickyHeader") : setClassesNames("");
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -30,8 +34,13 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
-      <Helmet title={data.site.siteMetadata.title}></Helmet>
-      <header className={isMenuMobileClicked ? "clicked" : null}>
+      <Helmet title={data.site.siteMetadata.title}>
+        <body className={window.location.pathname} />
+      </Helmet>
+      <header
+        className={`${isMenuMobileClicked ? "clicked" : ""} ${classesNames}`}
+        onScroll={() => handleScroll()}
+      >
         <h1>{data.site.siteMetadata.title}</h1>
         <Navbar
           toggleClassMobileMenu={handleToggleClass}
