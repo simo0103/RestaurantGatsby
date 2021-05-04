@@ -8,14 +8,12 @@ import "../style/style.scss";
 const Layout = ({ children }) => {
   const [isMenuMobileClicked, setClicked] = useState(false);
   const [classesNames, setClassesNames] = useState("");
-  const isBrowser = typeof window !== "undefined";
-
   const handleToggleClass = () => {
     setClicked(!isMenuMobileClicked);
   };
 
   useEffect(() => {
-    if (isBrowser) {
+    if (typeof window !== "undefined") {
       document.addEventListener("scroll", () => {
         window.scrollY > 1
           ? setClassesNames("stickyHeader")
