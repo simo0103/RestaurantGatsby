@@ -6,16 +6,14 @@ import "@fontsource/open-sans";
 import "../style/style.scss";
 
 const Layout = ({ children }) => {
-  const [isMenuMobileClicked, setClicked] = useState(false);
   const [classesNames, setClassesNames] = useState("");
+  const [isMenuMobileClicked, setClicked] = useState(false);
   const handleToggleClass = () => {
     setClicked(!isMenuMobileClicked);
   };
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    } else {
+    if (typeof window !== "undefined") {
       document.addEventListener("scroll", () => {
         window.scrollY > 1
           ? setClassesNames("stickyHeader")
@@ -47,7 +45,9 @@ const Layout = ({ children }) => {
         <body className={window.location.pathname} />
       </Helmet>
       <header
-        className={`${isMenuMobileClicked ? "clicked" : ""} ${classesNames}`}
+        className={`${isMenuMobileClicked ? "clicked" : ""} ${
+          typeof window !== "undefined" ? classesNames : ""
+        }`}
       >
         <h1>{data.site.siteMetadata.title}</h1>
         <Navbar
