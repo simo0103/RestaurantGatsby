@@ -13,7 +13,9 @@ const Layout = ({ children }) => {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window === "undefined") {
+      global.window = {};
+    } else {
       document.addEventListener("scroll", () => {
         window.scrollY > 1
           ? setClassesNames("stickyHeader")
