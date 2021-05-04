@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     if (typeof window === "undefined") {
-      global.window = {};
+      return;
     } else {
       document.addEventListener("scroll", () => {
         window.scrollY > 1
